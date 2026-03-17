@@ -1,4 +1,4 @@
-// app/signup/page.tsx
+//NOTE: THIS IS A SAMPLE PNLY
 "use client";
 
 import { useState } from "react";
