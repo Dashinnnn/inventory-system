@@ -1,0 +1,280 @@
+@import "tailwindcss";
+
+@media (width < 768px) {
+
+  :root {
+    /* Font Scale – Mobile First */
+    --font-8: clamp(0.65rem, 2.5vw, 0.7rem);
+    --font-10: clamp(0.7rem, 2.5vw, 0.75rem);
+    --font-12: clamp(0.7rem, 2.5vw, 0.75rem);
+    --font-14: clamp(0.8rem, 2.8vw, 0.875rem);
+    --font-16: clamp(0.9rem, 3vw, 1rem);
+    --font-20: clamp(1.05rem, 3.5vw, 1.25rem);
+    --font-24: clamp(1.2rem, 4vw, 1.5rem);
+    --font-32: clamp(1.5rem, 5vw, 2rem);
+    --font-48: clamp(1.9rem, 6vw, 3rem);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1366){
+  :root {
+    --font-8: clamp(0.68rem, 1.1vw, 0.78rem);
+    --font-10: clamp(0.70rem, 1.1vw, 0.80rem);
+    --font-12: clamp(0.75rem, 1.2vw, 0.85rem);
+    --font-14: clamp(0.85rem, 1.3vw, 0.95rem);
+    --font-16: clamp(1rem, 1.4vw, 1.05rem);
+    --font-18: clamp(1.1rem, 1.6vw, 1.25rem);
+    --font-20: clamp(1.2rem, 1.8vw, 1.4rem);
+    --font-24: clamp(1.4rem, 2vw, 1.7rem);
+    --font-32: clamp(1.8rem, 2.6vw, 2.3rem);
+    --font-48: clamp(2.2rem, 3vw, 2.8rem);
+  }
+}
+
+:root {
+  /* Use Next.js font variables */
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #EBF0F5; 
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Custom font families from next/font */
+  --font-primary: 'Inter', sans-serif;
+  --font-accent: "Bricolage Grotesque", serif;
+
+  /* Font weights */
+  --font-weight-extralight: 200;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --font-weight-black: 900;
+
+  /* Font sizes */
+  --font-size-4: 0.333rem;    /* mobile */
+  --font-size-8: 0.667rem;    /* mobile */
+  --font-size-10: 0.8rem;     /* mobile */
+  --font-size-11: 0.9rem;     /* mobile */
+  --font-size-12: 1rem;       /* 12px */
+  --font-size-13: 1.111rem;   /* mobile */
+
+  --font-size-16: 1.333rem;   /* 16px */
+  --font-size-20: 1.667rem;   /* 20px */
+  --font-size-24: 2rem;       /* 24px */
+  --font-size-28: 2.333rem;   /* 28px */
+  --font-size-32: 2.667rem;   /* 32px */
+  --font-size-36: 3rem;       /* 36px */
+  --font-size-40: 3.333rem;   /* 40px */
+  --font-size-44: 3.667rem;   /* 44px */
+  --font-size-48: 4rem;       /* 48px */
+  --font-size-52: 4.333rem;   /* 52px */
+  --font-size-56: 4.667rem;   /* 56px */
+  --font-size-60: 5rem;       /* 60px */
+  --font-size-64: 5.333rem;   /* 64px */
+  --font-size-68: 5.667rem;   /* 68px */
+  --font-size-72: 6rem;       /* 72px */
+  --font-size-76: 6.333rem;   /* 76px */
+  --font-size-80: 6.667rem;   /* 80px */
+
+  /* Icon sizes */
+  --icon-size-xs: 1.333rem;
+  --icon-size-sm: 1.667rem;
+  --icon-size-md: 2rem;
+  --icon-size-lg: 2.333rem;
+  --icon-size-xl: 2.667rem;
+
+  /* Colors */
+  --primary-color: #0022FF;
+  --secondary-color: #F5F6FA;
+  --black-color: #14181f;
+  --white-color: #ffffff;
+  --gray-color: #6d6d6d;
+
+  --red-indicator: #fa6464;
+  --green-indicator: #36c081;
+  --yellow-indicator: #ffdc6c;
+  --blue-indicator: #4c79d3;
+  --black-indicator: #14181f;
+
+  --gray-900: #2e2e2e; /* darkest */
+  --gray-700: #4a4a4a;
+  --gray-500: #6d6d6d; /* base */
+  --gray-300: #a0a0a0;
+  --gray-100: #d6d6d6; /* lightest */
+
+  --primary-rgb: 0, 34, 255;
+
+  --primary-color-opacity-10:  rgba(var(--primary-rgb), 0.10);
+  --primary-color-opacity-15:  rgba(var(--primary-rgb), 0.15);
+  --primary-color-opacity-30:  rgba(var(--primary-rgb), 0.30);
+  --primary-color-opacity-45:  rgba(var(--primary-rgb), 0.45);
+  --primary-color-opacity-60:  rgba(var(--primary-rgb), 0.60);
+  --primary-color-opacity-75:  rgba(var(--primary-rgb), 0.75);
+
+  --secondary-color-opacity-10: rgba(245, 246, 250, 0.1); 
+  --black-color-opacity-10: rgba(20, 24, 31, 0.1); 
+  --white-color-opacity-10: rgba(255, 255, 255, 0.1); 
+
+  --secondary-color-opacity-15: rgba(245, 246, 250, 0.15); 
+  --black-color-opacity-15: rgba(20, 24, 31, 0.15); 
+  --white-color-opacity-15: rgba(255, 255, 255, 0.15); 
+
+  --secondary-color-opacity-30: rgba(245, 246, 250, 0.3); 
+  --black-color-opacity-30: rgba(20, 24, 31, 0.3); 
+  --white-color-opacity-30: rgba(255, 255, 255, 0.3); 
+
+  --secondary-color-opacity-45: rgba(245, 246, 250, 0.45); 
+  --black-color-opacity-45: rgba(20, 24, 31, 0.45); 
+  --white-color-opacity-45: rgba(255, 255, 255, 0.45); 
+
+  --secondary-color-opacity-60: rgba(245, 246, 250, 0.6); 
+  --black-color-opacity-60: rgba(20, 24, 31, 0.6); 
+  --white-color-opacity-60: rgba(255, 255, 255, 0.6); 
+
+  --secondary-color-opacity-75: rgba(245, 246, 250, 0.75); 
+  --black-color-opacity-75: rgba(20, 24, 31, 0.75); 
+  --white-color-opacity-75: rgba(255, 255, 255, 0.75);
+
+  --red-indicator-opacity-15: rgba(250, 100, 100, 0.15);
+  --green-indicator-opacity-15: rgba(54, 192, 129, 0.15);
+  --yellow-indicator-opacity-15: rgba(255, 220, 108, 0.15); 
+  --blue-indicator-opacity-15: rgba(76, 121, 211, 0.15); 
+  --black-indicator-opacity-15: rgba(20, 24, 31, 0.15);
+
+  --red-indicator-opacity-30: rgba(250, 100, 100, 0.3);
+  --green-indicator-opacity-30: rgba(54, 192, 129, 0.3);
+  --yellow-indicator-opacity-30: rgba(255, 220, 108, 0.3); 
+  --blue-indicator-opacity-30: rgba(76, 121, 211, 0.3); 
+
+  --red-indicator-opacity-45: rgba(250, 100, 100, 0.45);
+  --green-indicator-opacity-45: rgba(54, 192, 129, 0.45);
+  --yellow-indicator-opacity-45: rgba(255, 220, 108, 0.45); 
+  --blue-indicator-opacity-45: rgba(76, 121, 211, 0.45); 
+
+  --red-indicator-opacity-60: rgba(250, 100, 100, 0.6);
+  --green-indicator-opacity-60: rgba(54, 192, 129, 0.6);
+  --yellow-indicator-opacity-60: rgba(255, 220, 108, 0.6); 
+  --blue-indicator-opacity-60: rgba(76, 121, 211, 0.6); 
+  --black-indicator-opacity-60: rgba(20, 24, 31, 0.6);
+
+  --shadow-primary-soft: 0px 0px 20px rgba(var(--primary-rgb), 0.10);
+
+  --shadow-primary-xs: 0px 0px 2px rgba(var(--primary-rgb), 0.05);
+  --shadow-primary-sm: 0px 0px 4px rgba(var(--primary-rgb), 0.04);
+  --shadow-primary-md: 0px 0px 8px rgba(var(--primary-rgb), 0.08);
+  --shadow-primary-lg: 0px 0px 16px rgba(var(--primary-rgb), 0.12);
+  --shadow-primary-xl: 0px 0px 24px rgba(var(--primary-rgb), 0.16);
+
+  /* Shadows: Secondary */
+  --shadow-secondary-sm: 0px 2px 4px rgba(245, 246, 250, 0.08);
+  --shadow-secondary-md: 0px 4px 8px rgba(245, 246, 250, 0.12);
+  --shadow-secondary-lg: 0px 6px 16px rgba(245, 246, 250, 0.16);
+
+  /* Shadows: Black */
+  --shadow-black-sm: 0px 2px 4px rgba(20, 24, 31, 0.1);
+  --shadow-black-md: 0px 4px 8px rgba(20, 24, 31, 0.15);
+  --shadow-black-lg: 0px 6px 16px rgba(20, 24, 31, 0.2);
+
+  /* Shadows: White */
+  --shadow-white-sm: 0px 2px 4px rgba(255, 255, 255, 0.08);
+  --shadow-white-md: 0px 4px 8px rgba(255, 255, 255, 0.12);
+  --shadow-white-lg: 0px 6px 16px rgba(255, 255, 255, 0.15);
+
+  /* Shadows: Indicators */
+  --shadow-red-sm: 0px 2px 4px rgba(250, 100, 100, 0.08);
+  --shadow-green-sm: 0px 2px 4px rgba(54, 192, 129, 0.08);
+  --shadow-yellow-sm: 0px 2px 4px rgba(255, 220, 108, 0.08);
+  --shadow-blue-sm: 0px 2px 4px rgba(76, 121, 211, 0.08);
+
+  --shadow-red-md: 0px 4px 8px rgba(250, 100, 100, 0.15);
+  --shadow-green-md: 0px 4px 8px rgba(54, 192, 129, 0.15);
+  --shadow-yellow-md: 0px 4px 8px rgba(255, 220, 108, 0.15);
+  --shadow-blue-md: 0px 4px 8px rgba(76, 121, 211, 0.15);
+
+  --border-primary-15: 2px solid var(--primary-color-opacity-15);
+  --border-primary-30: 2px solid var(--primary-color-opacity-30);
+  --border-primary-45: 2px solid var(--primary-color-opacity-45);
+  --border-primary-60: 2px solid var(--primary-color-opacity-60);
+
+  --border-secondary-15: 2px solid var(--secondary-color-opacity-15);
+  --border-secondary-30: 2px solid var(--secondary-color-opacity-30);
+  --border-secondary-45: 2px solid var(--secondary-color-opacity-45);
+  --border-secondary-60: 2px solid var(--secondary-color-opacity-60);
+
+  --border-black-15: 2px solid var(--black-color-opacity-15);
+  --border-black-30: 2px solid var(--black-color-opacity-30);
+  --border-black-45: 2px solid var(--black-color-opacity-45);
+  --border-black-60: 2px solid var(--black-color-opacity-60);
+
+  --border-white-15: 2px solid var(--white-color-opacity-15);
+  --border-white-30: 2px solid var(--white-color-opacity-30);
+  --border-white-45: 2px solid var(--white-color-opacity-45);
+  --border-white-60: 2px solid var(--white-color-opacity-60);
+
+  --border-red-15: 2px solid var(--red-indicator-opacity-15);
+  --border-red-30: 2px solid var(--red-indicator-opacity-30);
+  --border-red-45: 2px solid var(--red-indicator-opacity-45);
+  --border-red-60: 2px solid var(--red-indicator-opacity-60);
+
+  --border-green-15: 2px solid var(--green-indicator-opacity-15);
+  --border-green-30: 2px solid var(--green-indicator-opacity-30);
+  --border-green-45: 2px solid var(--green-indicator-opacity-45);
+  --border-green-60: 2px solid var(--green-indicator-opacity-60);
+
+  --border-yellow-15: 2px solid var(--yellow-indicator-opacity-15);
+  --border-yellow-30: 2px solid var(--yellow-indicator-opacity-30);
+  --border-yellow-45: 2px solid var(--yellow-indicator-opacity-45);
+  --border-yellow-60: 2px solid var(--yellow-indicator-opacity-60);
+
+  --border-blue-15: 2px solid var(--blue-indicator-opacity-15);
+  --border-blue-30: 2px solid var(--blue-indicator-opacity-30);
+  --border-blue-45: 2px solid var(--blue-indicator-opacity-45);
+  --border-blue-60: 2px solid var(--blue-indicator-opacity-60);
+
+  /* Button Transitions */
+  --btn-transition-default: background-color 0.25s ease, color 0.25s ease, transform 0.15s ease, box-shadow 0.25s ease;
+  --btn-transition-hover: transform 0.15s ease-out, box-shadow 0.2s ease, background-color 0.2s ease;
+  --btn-transition-pressed: transform 0.1s ease-in;
+  --btn-transition-disabled: opacity 0.3s ease, background-color 0.3s ease;
+  --btn-transition-outline: border-color 0.25s ease, color 0.25s ease, background-color 0.25s ease;
+  --btn-transition-icon-move: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html, 
+body, 
+:root {
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 100%;
+  width: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Light mode */
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
