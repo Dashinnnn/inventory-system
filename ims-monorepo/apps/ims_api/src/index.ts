@@ -3,6 +3,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import { connectDB } from './config/db';  
 import mongoose from 'mongoose';
+import authRoutes from "./modules/authModules/auth.routes";
 dotenv.config();
 
 const app = express();
@@ -18,6 +19,7 @@ connectDB();  // Call once here – Mongoose will handle the rest
 // ────────────────────────────────────────────────
 app.use(cors());
 app.use(express.json());
+app.use("/api/auth", authRoutes);
 
 // ────────────────────────────────────────────────
 //                      ROUTES
