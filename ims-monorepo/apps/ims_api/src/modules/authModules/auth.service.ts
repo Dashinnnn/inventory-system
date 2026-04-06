@@ -3,6 +3,7 @@ import jwt from "jsonwebtoken";
 import { findUserByEmail, createUser } from "./auth.repository";
 
 const JWT_SECRET = process.env.JWT_SECRET || "fallback_secret";
+// Created Single token only since there's no Refresh/Access token from docs/instructions
 const JWT_EXPIRES_IN = "7d";
 
 export const registerUser = async (name: string, email: string, password: string) => {
