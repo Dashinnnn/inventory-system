@@ -1,10 +1,9 @@
-import express from 'express';
-import cors from 'cors';
-import dotenv from 'dotenv';
-import { connectDB } from './config/db';  
-import mongoose from 'mongoose';
-import authRoutes from "./modules/authModules/auth.routes";
-dotenv.config();
+import "dotenv/config"; 
+import express from "express";
+import cors from "cors";
+import { connectDB } from "./config/db.js";     
+import mongoose from "mongoose";
+import authRoutes from "./modules/authModules/auth.routes.js"; 
 
 const app = express();
 const PORT = process.env.PORT || 8000;
