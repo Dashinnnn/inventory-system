@@ -1,8 +1,8 @@
 import rateLimit from 'express-rate-limit';
 
 export const apiLimiter = rateLimit({
-    windowMs: 15 * 60 * 1000, // 15 minutes
-    max: 100, 
+    windowMs: Number(process.env.RATE_LIMIT_WINDOW_MS) || 15 * 60 * 1000, // 15 minutes
+    max: Number(process.env.RATE_LIMIT_MAX_GENERAL) || 100, 
     standardHeaders: true, 
     legacyHeaders: false,
     message: {
@@ -12,8 +12,8 @@ export const apiLimiter = rateLimit({
 });
 
 export const authLimiter = rateLimit({
-    windowMs: 15 * 60 * 1000, // 15 minutes
-    max: 5, 
+    windowMs: Number(process.env.RATE_LIMIT_WINDOW_MS) || 15 * 60 * 1000, // 15 minutes
+    max:  Number(process.env.RATE_LIMIT_MAX_AUTH) || 5, 
     standardHeaders: true,
     legacyHeaders: false,
     message: {
