@@ -1,13 +1,16 @@
 import "dotenv/config";
 import express from "express";
-import cors from "cors";
+import cors from 'cors';
 import { connectDB } from "./config/db.js";
 import mongoose from "mongoose";
 import authRoutes from "./modules/authModules/auth.routes.js";
+import morgan from 'morgan';
 
 const app = express();
 const PORT = process.env.PORT || 8000;
 
+const logFormat = process.env.NODE_ENV === 'production' ? 'combined' : 'dev';
+app.use(morgan('dev'));
 // 1. DATABASE CONNECTION
 connectDB();
 
@@ -36,9 +39,23 @@ const corsOptions: cors.CorsOptions = {
 
 // 3. MIDDLEWARES
 app.use(cors({
-  origin: 'http://localhost:3000',
-  credentials: true
+  origin: (origin, callback) => {
+    // Allow requests with no origin (like mobile apps or curl)
+    if (!origin) return callback(null, true);
+    
+    if (allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true,
 }));
+
+
+app.get('/', (req, res) => {
+  res.send('API is running');
+});
 
 // 4. ROUTES
 app.use("/api/auth", authRoutes);
