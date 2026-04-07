@@ -1,28 +1,48 @@
-import "dotenv/config"; 
+import "dotenv/config";
 import express from "express";
 import cors from "cors";
-import { connectDB } from "./config/db.js";     
+import { connectDB } from "./config/db.js";
 import mongoose from "mongoose";
-import authRoutes from "./modules/authModules/auth.routes.js"; 
+import authRoutes from "./modules/authModules/auth.routes.js";
 
 const app = express();
 const PORT = process.env.PORT || 8000;
 
-// ────────────────────────────────────────────────
-//                DATABASE CONNECTION
-// ────────────────────────────────────────────────
-connectDB();  // Call once here – Mongoose will handle the rest
+// 1. DATABASE CONNECTION
+connectDB();
 
-// ────────────────────────────────────────────────
-//                    MIDDLEWARES
-// ────────────────────────────────────────────────
-app.use(cors());
-app.use(express.json());
+// 2. CORS CONFIGURATION
+// Convert the comma-separated string from .env into an array
+const allowedOrigins = process.env.ALLOWED_ORIGINS 
+  ? process.env.ALLOWED_ORIGINS.split(',') 
+  : [];
+
+const corsOptions: cors.CorsOptions = {
+  origin: (origin, callback) => {
+    // 1. Allow if no origin (Postman/Mobile apps)
+    // 2. Allow if origin is in our ALLOWED_ORIGINS list
+    // 3. Allow everything if in development mode
+    if (!origin || allowedOrigins.includes(origin) || process.env.NODE_ENV === 'development') {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  optionsSuccessStatus: 200,
+};
+
+// 3. MIDDLEWARES
+app.use(cors({
+  origin: 'http://localhost:3000',
+  credentials: true
+}));
+
+// 4. ROUTES
 app.use("/api/auth", authRoutes);
 
-// ────────────────────────────────────────────────
-//                      ROUTES
-// ────────────────────────────────────────────────
 app.get('/', (_, res) => {
   res.json({
     message: 'ims-api is running!',
@@ -42,12 +62,9 @@ app.get('/health', (_, res) => {
 
 app.get('/db', async (_, res) => {
   try {
-    if (mongoose.connection.readyState !== 1) {
-      throw new Error('Database not connected');
-    }
-    if (!mongoose.connection.db) {
-      throw new Error('Database object is not available');
-    }
+    if (mongoose.connection.readyState !== 1) throw new Error('Database not connected');
+    if (!mongoose.connection.db) throw new Error('Database object is not available');
+    
     await mongoose.connection.db.admin().ping();
     res.json({ status: 'ok', message: 'Database ping successful' });
   } catch (error) {
@@ -59,12 +76,14 @@ app.get('/db', async (_, res) => {
   }
 });
 
-// Start server
+// 5. SERVER START
 const server = app.listen(PORT, () => {
   console.log(`Express server running on http://localhost:${PORT}`);
+  console.log(`Mode: ${process.env.NODE_ENV}`);
+  console.log(`Allowed Origins: ${allowedOrigins.length > 0 ? allowedOrigins.join(', ') : 'None (Dev Mode only)'}`);
 });
 
-// Graceful shutdown (helps with auto-reload tools like tsx watch / nodemon)
+// 6. GRACEFUL SHUTDOWN
 const gracefulShutdown = () => {
   console.log('Received shutdown signal. Closing server...');
   server.close(() => {
@@ -80,4 +99,4 @@ const gracefulShutdown = () => {
 };
 
 process.on('SIGTERM', gracefulShutdown);
-process.on('SIGINT', gracefulShutdown);  // Ctrl+C
+process.on('SIGINT', gracefulShutdown);
