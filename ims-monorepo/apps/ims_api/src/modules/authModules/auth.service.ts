@@ -1,6 +1,6 @@
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import { findUserByEmail, createUser } from "./auth.repository";
+import { findUserByEmail, createUser } from "./auth.repository.js";
 
 const JWT_SECRET = process.env.JWT_SECRET || "fallback_secret";
 // Created Single token only since there's no Refresh/Access token from docs/instructions
