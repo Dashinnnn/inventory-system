@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 250px;
+}
+
+.input {
+  color: black;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: 0.2s;
+}
+
+.primary {
+  border-color: #ccc;
+}
+
+.secondary {
+  border-color: #ccc;
+}
+
+.input:focus {
+  border-color: #007bff;
+}
