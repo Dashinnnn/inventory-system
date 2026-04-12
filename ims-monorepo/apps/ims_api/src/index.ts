@@ -5,9 +5,16 @@ import { connectDB } from "./config/db.js";
 import mongoose from "mongoose";
 import authRoutes from "./modules/authModules/auth.routes.js";
 import morgan from 'morgan';
+import { createServer } from 'http';
+import { Server } from 'socket.io';
+// Add this with your other module imports
+import notificationRoutes from "./modules/notificationModules/notification.routes.js";
 
 const app = express();
+const httpServer = createServer(app);
 const PORT = process.env.PORT || 8000;
+
+app.use("/api/notifications", notificationRoutes);
 
 const logFormat = process.env.NODE_ENV === 'production' ? 'combined' : 'dev';
 app.use(morgan('dev'));
@@ -114,6 +121,23 @@ const gracefulShutdown = () => {
     });
   });
 };
+
+// 7. SOCKET.IO SETUP
+export const io = new Server(httpServer, {
+  cors: {
+    origin: "*", // Or your specific frontend URL
+    methods: ["GET", "POST"]
+  }
+});
+
+io.on('connection', (socket) => {
+  console.log('A user connected:', socket.id);
+  
+  socket.on('join', (userId: string) => {
+    socket.join(userId);
+    console.log(`User ${userId} joined their notification room`);
+  });
+});
 
 process.on('SIGTERM', gracefulShutdown);
 process.on('SIGINT', gracefulShutdown);
