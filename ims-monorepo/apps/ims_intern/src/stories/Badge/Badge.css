@@ -1,0 +1,79 @@
+.badge {
+ padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-block;
+  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  transition: all 0.2s ease;
+  cursor: default;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Roles */
+.badge--admin {
+  background: purple;
+  color: white;
+  border: 1px solid transparent;
+}
+
+.badge--staff {
+  background: teal;
+  color: white;
+}
+
+.badge--manager {
+  background: #d7e3fc;
+  color: black;
+}
+
+/* Status */
+.badge--active {
+  background: #36C081;
+  color: white;
+}
+
+.badge--inactive {
+  background: rgb(153, 152, 152);
+  color: white;
+}
+
+
+.badge--pending {
+  background: rgb(200, 183, 0);
+  color: black;
+}
+
+.badge--new {
+  background: orange;
+  color: white;
+
+}
+
+.badge--urgent {
+  background: red;
+  color: white;
+}
+
+.badge--overdue {
+  background: #CF64FA;
+  color: white;
+}
+
+.badge--basic {
+  background: linear-gradient(135deg, #045F46, #07B47E, #7DFFD6);
+color: #ffffff;
+box-shadow: 0 4px 12px rgba(7, 180, 126, 0.35);
+}
+
+.badge--enterprise {
+  background: linear-gradient(135deg, #5A1E5C, #943C88, #E0A9D5);
+color: #ffffff;
+box-shadow: 0 4px 12px rgba(148, 60, 136, 0.35);
+}
+
+.badge--pro {
+background: linear-gradient(135deg, #7A5C00, #D4AF37, #FFF3B0);
+color: #3B2A00;
+box-shadow: 0 4px 12px rgba(212, 175, 55, 0.35);
+}

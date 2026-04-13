@@ -35,7 +35,7 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-  ],
+, "src/components/Badge/Badge.tsx", "src/components/Badge/Badge.stories.ts"  ],
   "exclude": [
     "node_modules"
   ]
