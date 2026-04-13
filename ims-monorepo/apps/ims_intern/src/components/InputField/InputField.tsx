@@ -4,13 +4,15 @@ import React from 'react';
 import styles from './InputField.module.css';
 
 type InputFieldProps = {
-  variant?: 'primary';
+  variant?: 'primary' | 'password' | 'email' | 'number';
+  type?: 'text' | 'email' | 'password' | 'number';
   value: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 const InputField: React.FC<InputFieldProps> = ({
   variant = 'primary',
+  type = 'text',
   placeholder,
   value,
   onChange,
@@ -19,6 +21,7 @@ const InputField: React.FC<InputFieldProps> = ({
     <div className={styles.container}>
       <input
         type="text"
+        type = {type}
         placeholder={placeholder}
         value={value}
         onChange={onChange}
