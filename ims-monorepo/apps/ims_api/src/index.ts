@@ -4,6 +4,7 @@ import cors from 'cors';
 import { connectDB } from "./config/db.js";
 import mongoose from "mongoose";
 import authRoutes from "./modules/authModules/auth.routes.js";
+import inventoryRoutes from "./modules/internModules/inventoryModule/inventory.routes.js"
 import morgan from 'morgan';
 
 const app = express();
@@ -38,6 +39,7 @@ const corsOptions: cors.CorsOptions = {
 };
 
 // 3. MIDDLEWARES
+app.use(express.json());
 app.use(cors({
   origin: (origin, callback) => {
     // Allow requests with no origin (like mobile apps or curl)
@@ -59,6 +61,7 @@ app.get('/', (req, res) => {
 
 // 4. ROUTES
 app.use("/api/auth", authRoutes);
+app.use("/api/inventory", inventoryRoutes)
 
 app.get('/', (_, res) => {
   res.json({
