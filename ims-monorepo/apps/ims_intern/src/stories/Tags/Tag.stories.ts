@@ -5,15 +5,12 @@ const meta = {
   title: "Components/Tag",
   component: Tag,
 
-  // ✅ Center like Badge
   parameters: {
     layout: "centered",
   },
 
-  // ✅ Enable docs
   tags: ["autodocs"],
 
-  // ✅ Add controls (like Badge)
   argTypes: {
     label: { control: "text" },
     type: {
