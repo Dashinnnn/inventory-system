@@ -13,16 +13,16 @@ export const validate =
       next();
     } catch (error) {
       if (error instanceof ZodError) {
-        return res.status(400).json({
+        res.status(400).json({       
           status: "error",
           message: "Validation failed",
-          // ZodError.issues is the most reliable way to get the array of mistakes
           errors: error.issues.map((issue) => ({
-            // issue.path[1] is 'name', 'email', etc.
             field: issue.path[issue.path.length - 1],
             message: issue.message,
           })),
         });
-      } return res.status(500).json({ message: "Internal Server Error" });
+        return;                    
+      }
+      res.status(500).json({ message: "Internal Server Error" }); // ← removed return
     }
   };
