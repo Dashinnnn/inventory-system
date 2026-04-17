@@ -4,8 +4,9 @@ import cors from 'cors';
 import morgan from 'morgan';
 import mongoose from "mongoose";
 import { connectDB } from "./config/db.js";
-import authRoutes from "./modules/authModules/auth.routes.js";
-import userRoutes from "./modules/userManagement/userManagement.routes.js";
+import authRoutes from "./modules/authModules/auth.routes";
+import userRoutes from "./modules/userManagement/userManagement.routes";
+import organizationRoutes from "./modules/organizationModules/organization.routes";
 
 const app = express();
 const PORT = process.env.PORT || 8000;
@@ -49,6 +50,7 @@ app.get('/', (_, res) => {
 
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
+app.use("/api/organizations", organizationRoutes);
 
 app.get('/health', (_, res) => {
   const dbStatus = mongoose.connection.readyState === 1 ? 'connected' : 'disconnected';

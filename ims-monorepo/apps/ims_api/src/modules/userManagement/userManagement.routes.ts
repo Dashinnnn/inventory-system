@@ -7,10 +7,11 @@ import {
   deleteUser,
   inviteNewUser,
 } from "./userManagement.controller.js";
-import { authenticate } from "../../middlewares/auth.middleware.js";
-import { validate } from "../../middlewares/validate.middleware.js";
-import { apiLimiter } from "../../middlewares/rateLimiter.middleware.js";
+import { authenticate } from "../../middlewares/auth.middleware";
+import { validate } from "../../middlewares/validate.middleware";
+import { apiLimiter } from "../../middlewares/rateLimiter.middleware";
 import { requireRole, requireMinRole } from "./role.middleware.js";
+import { requireWorkspaceAccess } from "../../middlewares/workspace.middleware"; 
 import {
   inviteUserSchema,
   updateUserSchema,
@@ -22,6 +23,7 @@ const router = Router();
 
 router.use(authenticate);
 router.use(apiLimiter);
+router.use(requireWorkspaceAccess); 
 
 // GET /api/users/overview Access: Admin, Manager
 router.get(
