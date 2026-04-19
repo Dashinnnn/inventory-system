@@ -12,7 +12,7 @@ import notificationRoutes from "./modules/notificationModules/notification.route
 
 const app = express();
 const httpServer = createServer(app);
-const PORT = process.env.PORT || 8000;
+const PORT = Number(process.env.PORT) || 8000;
 
 app.use("/api/notifications", notificationRoutes);
 
@@ -100,17 +100,12 @@ app.get('/db', async (_, res) => {
   }
 });
 
-// 5. SERVER START
-const server = app.listen(PORT, () => {
-  console.log(`Express server running on http://localhost:${PORT}`);
-  console.log(`Mode: ${process.env.NODE_ENV}`);
-  console.log(`Allowed Origins: ${allowedOrigins.length > 0 ? allowedOrigins.join(', ') : 'None (Dev Mode only)'}`);
-});
-
 // 6. GRACEFUL SHUTDOWN
 const gracefulShutdown = () => {
   console.log('Received shutdown signal. Closing server...');
-  server.close(() => {
+  
+  // Change 'server' to 'httpServer' here
+  httpServer.close(() => {
     console.log('HTTP server closed');
     mongoose.connection.close().then(() => {
       console.log('MongoDB connection closed');
@@ -141,3 +136,9 @@ io.on('connection', (socket) => {
 
 process.on('SIGTERM', gracefulShutdown);
 process.on('SIGINT', gracefulShutdown);
+
+httpServer.listen(PORT, '0.0.0.0', () => {
+  console.log(`🚀 IMS Backend & Socket.io running on http://localhost:${PORT}`);
+  console.log(`Mode: ${process.env.NODE_ENV}`);
+  console.log(`Allowed Origins: ${allowedOrigins.length > 0 ? allowedOrigins.join(', ') : 'Dev Mode (All)'}`);
+});

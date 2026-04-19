@@ -1,4 +1,11 @@
 services:
+  redis:
+    image: redis:alpine
+    container_name: ims_redis
+    restart: always
+    ports:
+      - "6379:6379"
+
   mongodb:
     image: mongo:7
     restart: always
@@ -10,6 +17,7 @@ services:
       - "27017:27017"
     volumes:
       - mongo_data:/data/db
+
   mongo-express:
     image: mongo-express:latest
     restart: always
@@ -25,6 +33,30 @@ services:
       - ME_CONFIG_MONGODB_URL=mongodb://Centaim:centaim120903@mongodb:27017/admin?authSource=admin
     depends_on:
       - mongodb
+
+  backend:
+    build: 
+      context: .
+      dockerfile: ./apps/ims_api/Dockerfile
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mongodb
+      - redis
+    environment:
+      # Key fix: renamed MONGO_URI to MONGODB_URI to match your db.ts logic
+      - MONGODB_URI=mongodb://Centaim:centaim120903@mongodb:27017/ims_db?authSource=admin
+      # Key fix: using the service name 'redis' instead of localhost
+      - REDIS_URL=redis://redis:6379
+
+  frontend:
+    build:
+      context: .
+      dockerfile: ./apps/ims_web/Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
 
 volumes:
   mongo_data:
