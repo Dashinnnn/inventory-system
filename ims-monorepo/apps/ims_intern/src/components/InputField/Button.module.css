@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 250px;
+}
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  width: 100%;
+  border-radius: 10px;
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  background-color: #0022ff;
+  
+}
+.primary {
+  border-color: #0022ff;
+}
+
+.secondary {
+  background-color: rgb(241, 237, 237);
+
+  color: rgb(51, 51, 51);
+  border: 1px solid #0022ff;
+  
+}

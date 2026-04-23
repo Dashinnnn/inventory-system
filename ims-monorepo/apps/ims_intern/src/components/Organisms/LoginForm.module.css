@@ -1,0 +1,72 @@
+.container {
+  max-width: 320px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: inherit;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #1d3df2;
+}
+
+.subtitle {
+  margin-top: 8px;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.forgot {
+  font-size: 12px;
+  color: #1d3df2;
+  text-align: right;
+  text-decoration: none;
+}
+
+.divider {
+  text-align: center;
+  margin: 20px 0;
+  color: #888;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.footer {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: black;
+}
+
+.signup {
+  color: #1d3df2;
+  font-weight: 500;
+}
+
+.forgotdiv {
+  display: flex;
+  justify-content: flex-end;
+  width: 88%;
+}

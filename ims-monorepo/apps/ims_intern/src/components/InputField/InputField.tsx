@@ -4,8 +4,8 @@ import React from 'react';
 import styles from './InputField.module.css';
 
 type InputFieldProps = {
-  variant?: 'primary' | 'password' | 'email' | 'number';
-  type?: 'text' | 'email' | 'password' | 'number';
+  variant?: 'primary' | 'password' | 'email' | 'number' | 'contact' ;
+  type?: 'text' | 'email' | 'password' | 'number' | 'tel' ;
   value: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
@@ -20,7 +20,7 @@ const InputField: React.FC<InputFieldProps> = ({
   return (
     <div className={styles.container}>
       <input
-        type="text"
+
         type = {type}
         placeholder={placeholder}
         value={value}

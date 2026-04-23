@@ -1,6 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import React, { useState } from 'react';
+import React, { useState, ComponentProps} from 'react';
 import InputField from '../components/InputField/InputField';
+
+type StoryProps = ComponentProps<typeof InputField>;
 
 const meta: Meta<typeof InputField> = {
   title: 'Components/InputField',
@@ -82,4 +84,19 @@ export const Number: Story = {
   },
 };
 
+export const Contact: Story = {
+  render: () => {
+    const [value, setValue] = useState('');
+
+    return (
+      <InputField
+        variant="Contact"
+        type="tel"
+        placeholder="Enter contact number here"
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+      />
+    );
+  },
+};
 
