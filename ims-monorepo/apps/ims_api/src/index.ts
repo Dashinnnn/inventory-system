@@ -5,14 +5,16 @@ import morgan from "morgan";
 import mongoose from "mongoose";
 
 import { connectDB } from "./config/db.js";
-import authRoutes from "./modules/authModules/auth.routes.js";
-import userRoutes from "./modules/userManagement/userManagement.routes.js";
-import organizationRoutes from "./modules/organizationModules/organization.routes.js";
+
 
 import { createServer } from "http";
 import { Server } from "socket.io";
 
+import authRoutes from "./modules/authModules/auth.routes.js";
+import userRoutes from "./modules/userManagement/userManagement.routes.js";
+import organizationRoutes from "./modules/organizationModules/organization.routes.js";
 import notificationRoutes from "./modules/notificationModules/notification.routes.js";
+import inventoryRoutes from "./modules/internModules/inventoryModule/inventory.routes.js"
 
 const app = express();
 const httpServer = createServer(app);
@@ -47,6 +49,7 @@ const corsOptions: cors.CorsOptions = {
 };
 
 // 3. MIDDLEWARES
+app.use(express.json());
 app.use(cors({
   origin: (origin, callback) => {
     // Allow requests with no origin (like mobile apps or curl)
@@ -68,6 +71,7 @@ app.get('/', (req, res) => {
 
 // 4. ROUTES
 app.use("/api/auth", authRoutes);
+app.use("/api/inventory", inventoryRoutes)
 
 app.get('/', (_, res) => {
   res.json({
