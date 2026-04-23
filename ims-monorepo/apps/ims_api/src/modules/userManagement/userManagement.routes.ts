@@ -23,7 +23,7 @@ const router = Router();
 
 router.use(authenticate);
 router.use(apiLimiter);
-router.use(requireWorkspaceAccess); 
+//router.use(requireWorkspaceAccess); 
 
 // GET /api/users/overview Access: Admin, Manager
 router.get(
