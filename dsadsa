@@ -1,0 +1,101 @@
+* [33mec50b7d[m[33m ([m[1;32minventorymgtModule[m[33m)[m merged with org module & usermgmt module with redis
+[31m|[m * [33m2549d04[m[33m ([m[1;31morigin/inventorymgmtModule[m[33m)[m feat: manage order for inventory mgmt
+[31m|[m * [33m7dae551[m feat: create product for inventory module
+[31m|[m [32m|[m * [33mf3cfc2d[m[33m ([m[1;31morigin/notificationModule[m[33m, [m[1;32mnotificationModule[m[33m, [m[1;32mbackup/broken-state[m[33m)[m redis added
+[31m|[m [32m|[m [33m|[m *   [33m63317ce[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Merge pull request #34 from Dashinnnn/intern
+[31m|[m [32m|[m [33m|[m [34m|[m[35m\[m  
+[31m|[m [32m|[m [33m|[m [34m|[m *   [33m9165303[m[33m ([m[1;31morigin/intern[m[33m)[m Merge branch 'main' into intern
+[31m|[m [32m|[m [33m|[m [34m|[m [36m|[m[34m\[m  
+[31m|[m [32m|[m [33m|[m [34m|[m [36m|[m[34m/[m  
+[31m|[m [32m|[m [33m|[m [34m|[m[34m/[m[36m|[m   
+[31m|[m [32m|[m [33m|[m * [36m|[m   [33mb8ddf9a[m Merge pull request #28 from Dashinnnn/notificationModule
+[31m|[m [32m|[m [33m|[m [1;32m|[m[33m\[m [36m\[m  
+[31m|[m [32m|[m [33m|[m [1;32m|[m[33m/[m [36m/[m  
+[31m|[m [32m|[m [33m|[m[33m/[m[1;32m|[m [36m|[m   
+[31m|[m [32m|[m * [1;32m|[m [36m|[m [33m1160230[m Notification Module Added
+[31m|[m [32m|[m [1;33m|[m [1;32m|[m * [33m8936fdd[m Merge pull request #33 from Dashinnnn/feat/orgs
+[31m|[m [32m|[m [1;33m|[m[32m_[m[1;32m|[m[32m/[m[31m|[m 
+[31m|[m [32m|[m[32m/[m[1;33m|[m [1;32m|[m[31m/[m  
+[31m|[m [32m|[m[31m_[m[1;33m|[m[31m/[m[1;32m|[m   
+[31m|[m[31m/[m[32m|[m [1;33m|[m [1;32m|[m   
+* [32m|[m [1;33m|[m [1;32m|[m [33mf831a31[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mfeat/orgs[m[33m, [m[1;31morigin/feat/orgs[m[33m)[m feat: user mgt & organization module
+* [32m|[m [1;33m|[m [1;32m|[m [33mc93921f[m feat: user management module v1
+[32m|[m[32m/[m [1;33m/[m [1;32m/[m  
+* [1;33m/[m [1;32m/[m [33m16a573f[m Update .env.example
+[1;33m|[m[1;33m/[m [1;32m/[m  
+* [1;32m|[m [33m6d77872[m[33m ([m[1;31morigin/feat/CORSandMorgan[m[33m, [m[1;32mintern[m[33m, [m[1;32mfeat/CORSandMorgan[m[33m)[m Update auth.routes.ts
+* [1;32m|[m [33mc701014[m Add files via upload
+* [1;32m|[m [33mf23a95f[m added HTTP using morgan and CORS
+[1;35m|[m [1;32m|[m * [33mb25a33c[m[33m ([m[1;31morigin/theo[m[33m)[m feat: add modifications on tags
+[1;35m|[m [1;32m|[m * [33m940cfc8[m feat: add badge, tags, checkbox, radio button, and toggle
+[1;35m|[m [1;32m|[m [1;36m|[m * [33mf5df6fb[m[33m ([m[1;31morigin/storybook/inputfield[m[33m)[m feat: add InputField variants
+[1;35m|[m [1;32m|[m [1;36m|[m * [33m6c6db37[m feat: Storybook setup, added InputField and TextArea components
+[1;35m|[m [1;32m|[m [1;36m|[m[1;32m/[m  
+[1;35m|[m [1;32m|[m[1;32m/[m[1;36m|[m   
+[1;35m|[m [1;32m|[m [1;36m|[m * [33mbc6e9a2[m[33m ([m[1;31morigin/feature/storybook/-icons-buttons[m[33m)[m feat: add Button component and stories - closes #19
+[1;35m|[m [1;32m|[m [1;36m|[m * [33ma5cf542[m feat: add Icon stories for storybook - closes #23
+[1;35m|[m [1;32m|[m [1;36m|[m[1;32m/[m  
+[1;35m|[m [1;32m|[m[1;32m/[m[1;36m|[m   
+[1;35m|[m [1;32m|[m [1;36m|[m * [33m3de8d9a[m[33m ([m[1;35mrefs/stash[m[33m)[m WIP on feat/CORSandMorgan: 0d0ec76 Added CORS for frontend Integ and HTTP Request using morgan
+[1;35m|[m [1;32m|[m[1;35m_[m[1;36m|[m[1;35m/[m[34m|[m 
+[1;35m|[m[1;35m/[m[1;32m|[m [1;36m|[m [34m|[m 
+[1;35m|[m [1;32m|[m [1;36m|[m * [33m3334ecb[m index on feat/CORSandMorgan: 0d0ec76 Added CORS for frontend Integ and HTTP Request using morgan
+[1;35m|[m [1;32m|[m[1;35m_[m[1;36m|[m[1;35m/[m  
+[1;35m|[m[1;35m/[m[1;32m|[m [1;36m|[m   
+* [1;32m|[m [1;36m|[m [33m0d0ec76[m Added CORS for frontend Integ and HTTP Request using morgan
+* [1;32m|[m [1;36m|[m [33m776a977[m[33m ([m[1;32mfeat/protectedRoute[m[33m, [m[1;32mfeat/CORS[m[33m)[m Save my progress before merging
+[34m|[m [1;32m|[m [1;36m|[m * [33ma6aaf39[m[33m ([m[1;31morigin/feat/input-validation[m[33m, [m[1;32mfeat/input-validation[m[33m)[m feat: implement auth input validation with zod
+[34m|[m [1;32m|[m [1;36m|[m * [33mad31674[m feat: complete rate limiting
+[34m|[m [1;32m|[m [1;36m|[m *   [33md8e2e0a[m Merge remote-tracking branch 'origin/feat/protectedRoute' into feat/rate-limiting
+[34m|[m [1;32m|[m [1;36m|[m [36m|[m[34m\[m  
+[34m|[m [1;32m|[m[34m_[m[1;36m|[m[34m_[m[36m|[m[34m/[m  
+[34m|[m[34m/[m[1;32m|[m [1;36m|[m [36m|[m   
+* [1;32m|[m [1;36m|[m [36m|[m [33m536b398[m[33m ([m[1;31morigin/feat/protectedRoute[m[33m)[m feat: add protected GET /api/me (or /api/profile) route
+* [1;32m|[m [1;36m|[m [36m|[m [33m0990f6c[m feat: implement JWT authentication middleware
+* [1;32m|[m [1;36m|[m [36m|[m [33md0dfc61[m feat: add database migrations and seed scripts
+[1;31m|[m [1;32m|[m [1;36m|[m * [33m99e30a1[m feat: rate limiter middleware
+[1;31m|[m [1;32m|[m[1;31m_[m[1;36m|[m[1;31m/[m  
+[1;31m|[m[1;31m/[m[1;32m|[m [1;36m|[m   
+* [1;32m|[m [1;36m|[m   [33m786e1c8[m Merge pull request #9 from Dashinnnn/feat/register
+[1;36m|[m[1;33m\[m [1;32m\[m [1;36m\[m  
+[1;36m|[m [1;33m|[m[1;36m_[m[1;32m|[m[1;36m/[m  
+[1;36m|[m[1;36m/[m[1;33m|[m [1;32m|[m   
+[1;36m|[m * [1;32m|[m [33m0d88593[m feat: created simple jwt login/register & created User model
+[1;36m|[m * [1;32m|[m [33mb630752[m feat: created simple jwt login/register & created User model
+[1;36m|[m[1;36m/[m [1;32m/[m  
+* [1;32m|[m [33m2d212c5[m Merge pull request #7 from Dashinnnn/main
+[1;34m|[m[1;32m\[m[1;32m|[m 
+[1;34m|[m [1;32m|[m *   [33mbf39b94[m[33m ([m[1;31morigin/dev[m[33m)[m Merge pull request #8 from Dashinnnn/main
+[1;34m|[m [1;32m|[m [1;36m|[m[1;32m\[m  
+[1;34m|[m [1;32m|[m [1;36m|[m[1;32m/[m  
+[1;34m|[m [1;32m|[m[1;32m/[m[1;36m|[m   
+[1;34m|[m * [1;36m|[m [33m2c35467[m[33m ([m[1;32mmain[m[33m)[m chore: edited signup page
+[1;34m|[m [31m|[m *   [33m69b0a94[m Merge pull request #6 from Dashinnnn/main
+[1;34m|[m [31m|[m [32m|[m[31m\[m  
+[1;34m|[m [31m|[m [32m|[m[31m/[m  
+[1;34m|[m [31m|[m[31m/[m[32m|[m   
+[1;34m|[m * [32m|[m   [33mfb24ff5[m Merge pull request #5 from Dashinnnn/master
+[1;34m|[m [34m|[m[35m\[m [32m\[m  
+[1;34m|[m [34m|[m * [32m|[m [33m1fae50b[m chore: added directories for frontend
+[1;34m|[m * [35m|[m [32m|[m   [33mbb71a04[m Merge pull request #4 from Dashinnnn/dev
+[1;34m|[m [35m|[m[32m\[m [35m\[m [32m\[m  
+[1;34m|[m [35m|[m [32m|[m[35m/[m [32m/[m  
+[1;34m|[m [35m|[m[35m/[m[32m|[m [32m/[m   
+[1;34m|[m [35m|[m [32m|[m[32m/[m    
+[1;34m|[m [35m|[m *   [33m36bbfed[m Merge pull request #3 from Dashinnnn/intern
+[1;34m|[m [35m|[m [1;32m|[m[1;34m\[m  
+[1;34m|[m [35m|[m[1;34m_[m[1;32m|[m[1;34m/[m  
+[1;34m|[m[1;34m/[m[35m|[m [1;32m|[m   
+* [35m|[m [1;32m|[m   [33mf69874e[m Merge pull request #2 from Dashinnnn/dev
+[1;34m|[m[1;32m\[m [35m\[m [1;32m\[m  
+[1;34m|[m [1;32m|[m [35m|[m[1;32m/[m  
+[1;34m|[m [1;32m|[m[1;32m/[m[35m|[m   
+[1;34m|[m * [35m|[m [33mcc8ca4a[m fix: remove unnecessary comments
+[1;34m|[m * [35m|[m [33mf493fdf[m chore: added axios and react router
+[1;34m|[m * [35m|[m [33m57e8f09[m chore: added axios and react router
+[1;34m|[m * [35m|[m [33m1db0b7e[m fix: changed from postgres to mongodb medyo tanga ako don guys
+[1;34m|[m * [35m|[m [33m8b6099d[m feat: connected to pg and added dockerized ui
+[1;34m|[m [35m|[m[35m/[m  
+[1;34m|[m * [33m1aed346[m Feat: added initial code for frontend onboarding
+[1;34m|[m * [33m5de66f2[m Feat: added initial code for frontend onboarding
+[1;34m|[m * [33m3f5ad3e[m
