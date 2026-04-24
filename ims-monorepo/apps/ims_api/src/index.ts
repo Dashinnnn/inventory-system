@@ -15,6 +15,7 @@ import userRoutes from "./modules/userManagement/userManagement.routes.js";
 import organizationRoutes from "./modules/organizationModules/organization.routes.js";
 import notificationRoutes from "./modules/notificationModules/notification.routes.js";
 import inventoryRoutes from "./modules/internModules/inventoryModule/inventory.routes.js"
+import { taskRoutes } from './modules/taskModules/task.routes.js';
 
 const app = express();
 const httpServer = createServer(app);
@@ -70,6 +71,7 @@ app.get('/', (req, res) => {
 });
 
 // 4. ROUTES
+app.use('/api/tasks', taskRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/inventory", inventoryRoutes)
 
