@@ -1,0 +1,46 @@
+.storybook-radio-wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.storybook-radio-wrapper input {
+  display: none;
+}
+
+.storybook-radio {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid #D0E1FF;
+  background: #ECF2FF;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.storybook-radio::after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0022FF, #4D6BFF);
+  opacity: 0;
+}
+
+/* Checked */
+.storybook-radio-wrapper input:checked + .storybook-radio {
+  border-color: #0022FF;
+}
+
+.storybook-radio-wrapper input:checked + .storybook-radio::after {
+  opacity: 1;
+}
+
+/* Hover */
+.storybook-radio-wrapper:hover .storybook-radio {
+  border-color: #4D6BFF;
+}

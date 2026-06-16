@@ -1,0 +1,46 @@
+.storybook-toggle-wrapper {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.storybook-toggle-wrapper input {
+  display: none;
+}
+
+.storybook-toggle {
+  width: 42px;
+  height: 22px;
+  border-radius: 999px;
+  background: #D0E1FF;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.storybook-toggle::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+/* ON */
+.storybook-toggle-wrapper input:checked + .storybook-toggle {
+  background: linear-gradient(135deg, #0022FF, #4D6BFF);
+  box-shadow: 0 2px 10px rgba(0, 34, 255, 0.3);
+}
+
+.storybook-toggle-wrapper input:checked + .storybook-toggle::after {
+  transform: translateX(20px);
+}
+
+/* Hover */
+.storybook-toggle-wrapper:hover .storybook-toggle {
+  background: #B8D2FF;
+}

@@ -1,0 +1,40 @@
+.tag {
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-block;
+  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  transition: all 0.2s ease;
+}
+
+.tag--electronics {
+  background: linear-gradient(135deg, #EDE7F6, #D1C4E9);
+  color: #6C5CE7;
+}
+
+.tag--sale {
+ background: linear-gradient(135deg, #7A1C1C, #D63031, #FF7675);
+  color: #ffffff;
+
+}
+
+.tag--featured {
+ background: linear-gradient(135deg, #FFF3B0, #D4AF37);
+color: #7A5C00;
+}
+
+.tag--instock {
+  background: linear-gradient(135deg, #E8F8F5, #C8E6C9);
+  color: #00B894;
+}
+
+.tag--lowstock {
+   background: linear-gradient(135deg, #FDECEA, #F5C6CB);
+  color: #D63031;
+}
+
+.tag--outofstock {
+  background: linear-gradient(135deg, #F5F5F5, #CCCCCC);
+  color: #9E9E9E;
+}
